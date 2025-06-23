@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* PAGE 1 */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 55px;
+            justify-content: center;
+        }
+
+        .image-container {
+            position: relative;
+            width: 275px;
+
+            height: 370px;
+            overflow: hidden;
+            border-radius: 40px;
+            box-shadow: 8px 8px 0px #29728B40, -8px -8px 0px #1F72AA75;
+            text-shadow: 0px 4px 5px #FDFDFECC;
+            z-index: 2;
+
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+
+
+        }
+
+
+        .overlay-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .overlay-text {
+            color: white;
+            font-size: 27px;
+            background-color: 0;
+            padding: 90%;
+            border: 0;
+            text-decoration: none;
+            opacity: 90%;
+            position: relative;
+
+        }
+
+        .image-container:hover {
+            filter: brightness(0.8);
+            opacity: 1;
+            z-index: 1;
+            border-radius: 40px;
+        }
+
+        .image-container:hover .overlay-text {
+            color: white;
+            z-index: 2;
+            opacity: 1;
+        }
+
+
+        /* PAGE 2 */
+        .gallery-hover {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+            align-items: flex-start;
+
+
+        }
+
+        .hover-box {
+
+            margin-left: 30px;
+            margin-top: 15px;
+            width: 599px;
+            height: 80px;
+            color: white;
+
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+
+            border-radius: 40px;
+
+
+
+
+        }
+
+
+
+        .image-preview {
+
+
+            left: 250px;
+            margin-left: 150px;
+            width: 100;
+            height: 100;
+            display: none;
+
+
+
+
+        }
+
+        .image-preview img {
+            border-radius: 20px;
+
+            width: 250px;
+
+        }
+
+        .hover-box:hover {
+
+            border: 5px solid white;
+            border-radius: 50px;
+
+
+        }
+
+        .hover-box:hover .image-preview {
+
+            display: block;
+        }
+
+
+
+
+
+        .bg-1 {
+
+            background-color: #EEE9D9;
+            opacity: 80%;
+        }
+
+        .bg-2 {
+            background-color: #8BB8C1CC;
+            opacity: 80%;
+        }
+
+        .bg-3 {
+            background-color: #AAD8D7CC;
+            opacity: 80%;
+        }
+
+        .bg-4 {
+            background-color: #8BC0BDCC;
+            opacity: 80%;
+        }
+
+        .bg-5 {
+            background-color: #97CCE0CC;
+            opacity: 80%;
+        }
+
+        /* PAGE 3 */
+        .package-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .package-card {
+            width: 384px;
+            height: 527px;
+            background-color: #f4f4f4;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-card h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .package-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 44px;
+            color: black;
+            font-weight: bold;
+            position: absolute;
+            top: 90px;
+            left: 30px;
+        }
+
+
+        .card-hover-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #171616aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+        }
+
+        .card-hover-info img {
+            filter: brightness(0.8);
+        }
+
+        .package-card:hover .card-hover-info {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGE 1 -->
+    <div
+        style=" width: 1440px; background-image: url('/image/HeroImage.png'); height: 773px;background-repeat: no-repeat;text-decoration: none;">
+        <div
+            style="display: flex;align-items: center; padding: 22px 0;width: 1215px;justify-content: space-between;margin-left: autom;margin-right: auto;">
+            <a href="http://127.0.0.1:5500/6.16.html">
+                <img src="/image/logo 1.png" />
+            </a>
+
+            <div style="display: flex;gap: 60px; color: white;font-size: 25px;">
+                <a cass="menu" style="color: white;text-decoration: none;" href="#">Home</a>
+                <a cass="menu" style="color: white;text-decoration: none;" href="#">About</a>
+                <a cass="menu" style="color: white;text-decoration: none;" href="#">Contact</a>
+                <a cass="menu" style="color: white;text-decoration: none;" href="#"><img src="/image/user.png"></a>
+
+            </div>
+            <div>
+                <button
+                    style="font-size: 19px; background-color: white; border-radius: 100% ;border: 0; color: black; margin-right: 0px;padding: 20px 20px; "><b>EN</b></button>
+            </div>
+
+        </div>
+        <div
+            style="font-size: 80px;font: bebas neue; display: flex;justify-content: center;margin-top: 50px;color: #FDFDFEFA;opacity: 70%;">
+            PURE MAGIC </div>
+        <div
+            style="display: flex; font-size: 250px;justify-content: center;color: #FDFDFEFA;font-weight: 400;font: bebas neue;border: 2px;line-height: 100%;">
+            AWAITS!
+        </div>
+        <div
+            style="display: flex;font-size: 64px; color: #FFFFFF;justify-content: center;font: Hanuman;font-weight: 900;">
+            2024</div>
+    </div>
+    <div
+        style="background-image: url(/image/Location\ image.png);width: 1440px;height: 512px;display: flex;justify-content: center; gap: 100px;text-align: center;">
+        <div class="gallery">
+            <div class="image-container">
+                <img src="/image/Hover card image (1).png" alt="Зураг 1">
+                <div class="overlay-wrapper">
+                    <a href="#" class="overlay-text">TERKHIIN TSAGAAN NUUR</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="/image/Hover card image (2).png" alt="Зураг 2">
+                <div class="overlay-wrapper">
+                    <a href="#" class="overlay-text">KHUVSGUL LAKE</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="/image/Hover card image.png" alt="Зураг 3">
+                <div class="overlay-wrapper">
+                    <a href="#" class="overlay-text">KHORGIIN TOGOO</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="/image/Untitled.png" alt="Зураг 4">
+                <div class="overlay-wrapper">
+                    <a href="#" class="overlay-text">AMAR BAYASGALANT MONASTERY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE 2 -->
+    <div
+        style="text-align: center; width: 1440px;height: 902px;background-image: url(/image/Roadmap\ image.png);position: relative;">
+        <h1
+            style="margin: 0; font-size: 42px; font-weight: 600; line-height: 100%; vertical-align: bottom;text-align:center; ">
+            Destination of Our
+            Agency</h1>
+        <p>Pack your bags and get ready</p>
+
+
+
+        <div class="gallery-hover">
+            <div style="color: black;text-align: center;" class="hover-box bg-1">
+                <div class="text-area"> <b>Sukhbaatar square</b>
+                    <p>Ulaanbator</p>
+                </div>
+                <div style="margin-left: 770px;" class="image-preview">
+                    <img src="/image/Frame 176.png" alt="Preview">
+                </div>
+            </div>
+            <div style="color: black; text-align: center; " class="hover-box bg-2">
+                <div class="text-area"><b>Amarbayasgalant monastery</b>
+                    <p>Bulgan</p>
+                </div>
+                <div style="margin-left: 900px;" class="image-preview">
+                    <img src="/image/Frame 177.png" alt="Preview">
+                </div>
+            </div>
+            <div class="hover-box bg-3">
+                <div style="color: black; text-align: center;" class="text-area"><b>Khorgiin togoo</b>
+                    <p>Arkhangai</p>
+                </div>
+                <div style="margin-left: 880px;margin-top: 2px;" class="image-preview">
+                    <img src="image/11111.png" alt="Preview">
+                </div>
+            </div>
+            <div style="color: black; text-align: center;" class="hover-box bg-4">
+                <div class="text-area"><b>Terkhiin tsagaan lake</b>
+                    <p>Arkhangai</p>
+                </div>
+                <div style="margin-left: 990px;margin-bottom: 10px;" class="image-preview">
+                    <img src="/image/Frame 178.png" alt="preview">
+                </div>
+            </div>
+            <div style="color: black; text-align: center;" class="hover-box bg-5">
+                <div class="text-area"><b>Khuvsgul lake</b>
+                    <P>khuvsgul</P>
+                </div>
+                <div style="margin-left: 1000px;" class="image-preview">
+                    <img src="/image/Frame 179.png" alt="Preview">
+                </div>
+            </div>
+        </div>
+        <!-- PAGE 3 -->
+    </div>
+    <div style="width: 1440px;height: 1120px;background-image: url(/image/Price&Footer\ image.png);text-align: center;">
+        <h1
+            style="margin: 0; font-size: 42px; font-weight: 600; line-height: 100%; vertical-align: bottom;text-align:center; ">
+            Pricing of Our Agency</h1>
+        <p>Choose a Package That's Right For You</p>
+
+        <div style="display: flex; gap: 50px;justify-content: center;margin-top: 150px;" class="package-container">
+            <div class="package-card">
+                <h3 style="font-size: 25px;font-weight: 500 ; line-height: 100%;text-align: start;padding: 25px 35px;">
+                    <b>Budget
+                        Package</b>
+                </h3>
+                <p style="margin-top: 55px;text-align: start;margin-left: 10px;opacity: 70%;"> Essentials Covered</p>
+                <p>
+                    Includes:
+
+                </p>
+                <p>Group transportation (shared van/bus)</p>
+                <div class="price">500$</div>
+                <div class="card-hover-info">
+
+                </div>
+            </div>
+            <div class="package-card">
+                <h3 style="font-size: 25px;font-weight: 500 ; line-height: 100%;text-align: start;padding: 25px 35px;">
+                    <b> Standart Package </b>
+                </h3>
+                <p style="margin-top: 55px;text-align: start;margin-left: 10px;opacity: 70%;"> Balanced Adventure</p>
+                <p>
+                <p>Includes:</p>
+                </p>
+                <div class="price">800$</div>
+                <div class="card-hover-info">
+
+                </div>
+            </div>
+            <div class="package-card">
+                <h3 style="font-size: 25px;font-weight: 500 ; line-height: 100%;text-align: start;padding: 25px 35px;">
+                    <b>Luxury Package
+                    </b>
+                </h3>
+                <p style="margin-top: 55px;text-align: start;margin-left: 10px;opacity: 70%;"> Ultimate Comfort</p>
+                <p>
+                <p>Includes:</p>
+                <div class="price">1200$</div>
+                <div class="card-hover-info">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
